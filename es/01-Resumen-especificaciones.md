@@ -113,39 +113,50 @@ La Fundación UNID está desarrollando en colaboración con Connecting Solution 
 ### **Product Management**
 
 **PUT** /product
-creates a new product
+
+*creates a new product*
 
 **GET** /product/{productId}
-gets a product
+
+*gets a product*
 
 **PUT** /product/{productId}
-updates a product
+
+*updates a product*
 
 **DELETE** /product/{productId}
-delete a product
+
+*delete a product*
 
 **POST** /product/{productId}​/split
-split a product into other products
+
+*split a product into other products*
 
 **POST** /product/merge
-merge a list of products into a new product
+
+*merge a list of products into a new product*
 
 **GET** /product/{productId}/trace
-get the full trace of a product
+
+*get the full trace of a product*
 
 **GET** /product/{query}
-get the requested products according to the query
+
+*get the requested products according to the query*
 
 ### **Event Management**
 
 **PUT** /product/event
-creates a new event
+
+*creates a new event*
 
 **GET** /product/event/{eventId}
-gets an event
+
+*gets an event*
 
 **GET** /product/event/{query}
-get the requested events according to the query
+
+*get the requested events according to the query*
 <p>&nbsp  </p>
 
 Además, la Fundación UNID está desarrollando otros smart-contracts en colaboración con Conéctate Soluciones y Aplicaciones SL para registrar el hash de recursos FHIR y pruebas de firma digital ([Linked Data Proofs](https://w3c-ccg.github.io/ld-proofs/)) también en la versión 2.0 de Hyperledger Fabric.
