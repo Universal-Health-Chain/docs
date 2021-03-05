@@ -9,6 +9,9 @@ La [Fundación UNID](http://unid.es) y la empresa española Conéctate Solucione
 
 [![](https://img.youtube.com/vi/LIEneYmrYRY/0.jpg)](https://www.youtube.com/watch?v=LIEneYmrYRY)
 
+<sub>Vídeo de la plataforma UHC (clic para abrir Youtube)</sub>
+<p>&nbsp  </p>
+
 Las personas pueden unificar sus datos de salud de organizaciones públicas y privadas en su teléfono móvil, de manera segura, junto con su [Identificador Universal de Salud](https://patentscope.wipo.int/search/es/detail.jsf?docId=WO2020136289&tab=PCTBIBLIO). Universal Health Chain (UHC) utiliza los estándares internacionales [HL7 FHIR R4](http://hl7.org/fhir/R4), [International Patient Summary (IPS)](http://hl7.org/fhir/uv/ips), [Verifiable Credentials (VC)](https://www.w3.org/TR/vc-data-model/), entre otros, y permite además incluir archivos PDF, si bien PDF no es el formato internacional para el intercambio de datos médicos ni para atención sanitaria transfronteriza, como sí lo son HL7 FHIR e IPS.
 
 IPS es un documento de FHIR con algunas secciones de la historia clínica obligatorias y otras opcionales, [definido por el Comité Europeo de Estandarización (CEN)](https://www.cen.eu/news/brief-news/Pages/NEWS-2021-009.aspx).
@@ -30,6 +33,8 @@ Los datos de la historia clínica del paciente o donante pueden ser recibidos o 
 2. El servicio de salud envía a la persona sus datos encriptados, directamente a la aplicación UHC-personal mediante una conexión segura que se crea a partir del Identificador Universal de Salud de la persona, de manera que solo la persona puede desencriptar los datos en su teléfono móvil. Los datos siempre viajan encriptados, por lo que ningún intermediario puede desencriptarlos.
 
 [![](https://img.youtube.com/vi/5f0zP3O5B7c/0.jpg)](https://www.youtube.com/watch?v=5f0zP3O5B7c)
+
+<sub>Vídeo de la aplicación UHC-personal (clic para abrir Youtube)</sub>
 <p>&nbsp  </p>
 
 ## **Normativas de acceso y portabilidad de datos de salud y de atención sanitaria transfronteriza**
@@ -38,7 +43,7 @@ En EE.UU. la normativa USCDI hace obligatorio que los proveedores de servicios d
 
 Esto, sin embargo, no impide los ataques del tipo Man-In-The-Middle, en el tráfico entre el servidor API del proveedor de salud y la aplicación o web del usuario, en el caso de que la red del usuario esté comprometida (por ejemplo una red WIFI mediante un ataque con DNS spoofing). UHC soluciona este problema mediante el servicio de mensajería con encriptación punto a punto y la aplicación UHC-personal.
 
-En Europa la normativa especifica que los datos tienen que entregarse de manera digital a la persona en un formato electrónico común para la atención sanitaria transfronteriza. Este formato es *International Patient Summary* o *IPS*, establecido por el Comité Europeo de Estandarización (CEN), que utiliza FHIR R4 y establece diferentes secciones en el documento FHIR que continene la historia clínica del pacicente.
+En Europa la normativa especifica que los datos tienen que entregarse de manera digital a la persona en un formato electrónico común para la atención sanitaria transfronteriza. Este formato es *International Patient Summary* o *IPS*, establecido por el [Comité Europeo de Estandarización (CEN)](https://www.cen.eu/news/brief-news/Pages/NEWS-2021-009.aspx, que utiliza FHIR R4 y establece diferentes [secciones en el documento FHIR que continene la historia clínica del paciente](http://hl7.org/fhir/uv/ips/ipsStructure.html).
 
 UHC aporta la herramienta que permite cumplir con las difetentes normativas, ya que la persona podrá recibir sus datos de salud mediante el Identificador Universal de Salud, por ejemplo desde un laboratorio, y posteriormente podrá enviar o compartir determinados datos de salud como resultados de test de laboratorio o vacunaciones de COVID-19, entre otros datos posibles dentro de la historia clínica que la persona unifica y tiene encriptada de manera segura en la aplicación UHC-personal.
 <p>&nbsp  </p>
@@ -166,7 +171,7 @@ Además, la Fundación UNID está desarrollando otros smart-contracts en colabor
 
 UHC permite que cualquier organización pueda crear y leer recursos de FHIR de una manera sencilla, tanto para atención sanitaria como para laboratorios, trazabilidad de productos biológicos y también para servicios y aplicaciones ajenos al ámbito de la salud. Cada organización podrá desplegar su propio servicio de manera gratuita o utilizar el servicio de ayuda alojado por la Fundación UNID, que está siendo desarrollado en colaboración con la empresa Conéctate Soluciones y Aplicaciones SL.
 
-El envío de información de salud al usuario se realiza en UHC mediante mensajes, documentos y recursos FHIR R4, si bien UHC también admite Verifiable Credentials. Para organizaciones que todavía no hayan implantado FHIR, el sistema de UHC puede recibir solamente los códigos clínicos SNOMED LOINC y HL7 (entre otros) para contruir los datos en formato FHIR y que estos sean enviados porteriormente a la persona, facilitando la transformación digital para ayudar a conseguir el cumplimiento de las normativas, uso de estándares internacionales y la atención sanitaria transfronteriza
+El envío de información de salud al usuario se realiza en UHC mediante mensajes, documentos y recursos FHIR R4, si bien UHC también admite Verifiable Credentials. Para organizaciones que todavía no hayan implantado FHIR, el sistema de UHC puede recibir solamente los códigos clínicos SNOMED LOINC y HL7 (entre otros) para construir los datos en formato FHIR y que estos sean enviados porteriormente a la persona, facilitando la transformación digital para ayudar a conseguir el cumplimiento de las normativas, uso de estándares internacionales y la atención sanitaria transfronteriza
 
 En concreto, el servicio de ayuda de UHC permite lo siguiente:
 
@@ -288,7 +293,7 @@ La Fundación UNID, en colaboración con Conéctate Soluciones y Aplicaciones SL
     "credentialSubject": "<FHIR DIAGNOSTIC REPORT>"
 }
 ```  
-<sub>*Esquema básico que muestra cómo un resurso de FHIR es introducido en una credencial verificable (VC) según el estándar de W3C*</sub>
+<sub>*Esquema básico que muestra cómo un recurso de FHIR es introducido en una credencial verificable (VC) según el estándar de W3C*</sub>
 <p>&nbsp  </p>
 
 De manera similar, también se pueden utilizar los formatos "sheet" de UHC dentro de una credencial verificable, en cuyo caso el tipo de la credencial no comenzará con "VC/FHIR/R4" sino con "UHC/Sheet/1.0":
@@ -302,7 +307,7 @@ De manera similar, también se pueden utilizar los formatos "sheet" de UHC dentr
     "credentialSubject": "<UHC-SHEET DIAGNOSTIC REPORT>"
 }
 ```  
-<sub>*Esquema básico que muestra cómo un resurso de FHIR es introducido en una credencial verificable (VC) según el estándar de W3C*</sub>
+<sub>*Esquema básico que muestra cómo una "hoja" (sheet) de UHC es introducida en una credencial verificable (VC) según el estándar de W3C*</sub>
 <p>&nbsp  </p>
 
 La característica principal de las credenciales verificables es que pueden ser firmadas digitalmente en el formato estandarizado por W3C, generado un objeto "proof" en el formato Linked Data Proof o LD-Proof.
