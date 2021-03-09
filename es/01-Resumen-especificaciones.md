@@ -420,7 +420,7 @@ Utilizando FHIR, IPS, los identificadores UUID v4, el Identificador Universal de
 
 Así mismo, utilizando el Identificador Universal de Salud, la identidad digital de la Fundación UNID, los identificadores UUID v4 y comunicación [DIDComm](https://github.com/decentralized-identity/didcomm-messaging), la aplicación del profesional sanitario puede:
 1. Leer la información de la historia clínica que le envía la persona en formato FHIR / IPS.
-2. Generar nuevos datos FHIR de forma descentraliza, identificando cada nuevo recurso de FHIR con un identificador UUID v4.
+2. Generar nuevos datos FHIR de forma descentralizada, identificando cada nuevo recurso de FHIR con un identificador UUID v4.
 3. Firmar digitalmente los datos con las claves de firma accesibles de forma segura desde el dispositivo del profesional sanitario.
 4. Enviar los nuevos datos médicos generados al paciente de forma segura, utilizando encriptación asimétrica para cifrar el mensaje.
 5. Sincronizar los nuevos datos generados por la aplicación del profesional sanitario en el sistema hospitalario central y certificarlos en la red de blockchain, cuando se encuentren disponibles la conexión de red y el sistema hospitalario.

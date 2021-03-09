@@ -7,6 +7,6 @@ Copyright © 2021 Fundación UNID.
 1. [Resumen de especificaciones](./es/01-Resumen-especificaciones.md)
 <p>&nbsp  </p>
 
-### **[English Documentation](./es/)**
+### **[English Documentation](./en/)**
 1. [Specification summary](./en/01-Specification-summary.md)
 <p>&nbsp  </p>
