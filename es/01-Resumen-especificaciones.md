@@ -43,7 +43,7 @@ En EE.UU. la normativa USCDI hace obligatorio que los proveedores de servicios d
 
 Esto, sin embargo, no impide los ataques del tipo Man-In-The-Middle, en el tráfico entre el servidor API del proveedor de salud y la aplicación o web del usuario, en el caso de que la red del usuario esté comprometida (por ejemplo una red WIFI mediante un ataque con DNS spoofing). UHC soluciona este problema mediante el servicio de mensajería con encriptación punto a punto y la aplicación UHC-personal.
 
-En Europa la normativa especifica que los datos tienen que entregarse de manera digital a la persona en un formato electrónico común para la atención sanitaria transfronteriza. Este formato es *International Patient Summary* o *IPS*, establecido por el [Comité Europeo de Estandarización (CEN)](https://www.cen.eu/news/brief-news/Pages/NEWS-2021-009.aspx, que utiliza FHIR R4 y establece diferentes [secciones en el documento FHIR que continene la historia clínica del paciente](http://hl7.org/fhir/uv/ips/ipsStructure.html).
+En Europa la normativa especifica que los datos tienen que entregarse de manera digital a la persona en un formato electrónico común para la atención sanitaria transfronteriza. Este formato es [*International Patient Summary* (IPS), establecido por el Comité Europeo de Estandarización (CEN)](https://www.cen.eu/news/brief-news/Pages/NEWS-2021-009.aspx), que utiliza FHIR R4 y establece diferentes [secciones en el documento FHIR que contiene la historia clínica del paciente](http://hl7.org/fhir/uv/ips/ipsStructure.html).
 
 UHC aporta la herramienta que permite cumplir con las difetentes normativas, ya que la persona podrá recibir sus datos de salud mediante el Identificador Universal de Salud, por ejemplo desde un laboratorio, y posteriormente podrá enviar o compartir determinados datos de salud como resultados de test de laboratorio o vacunaciones de COVID-19, entre otros datos posibles dentro de la historia clínica que la persona unifica y tiene encriptada de manera segura en la aplicación UHC-personal.
 <p>&nbsp  </p>
@@ -256,11 +256,13 @@ El servicio de ayuda de UHC convierte esos campos básicos (sheet) en la estruct
 <sub>*Ejemplo de recurso FHIR Diagnostic Report generado a partir de la "hoja" (sheet) de UHC anterior*</sub>
 <p>&nbsp  </p>
 
+## **Certificación de datos**
+
 El servicio de ayuda de UHC permite obtener una huella digital de los datos. Las funciones hash generan una huella digital, y tienen la característica de que el valor hash generado es radicalmente distinto con un mínimo cambio que se produzca en los datos (con un solo bit modificado el valor hash es totalmente distinto). Por ejemplo, al aplicar la función hash SHA-256 (ampliamente utilizada), se obtiene un resultado o huella digital de este tipo:
 
 *8100abc4946288bfcefab256cf7f8da14754e57645e87dcef172db6d4940b733*
 
-Como el identificador UUID del recurso de FHIR (informe de laboratorio) es único y unívoco, el valor hash SHA-256 obtenido será también unívoco, es decir, no podrá obtenerse el mismo valor hash a partir de ningún otro recurso de FHIR, lo que asegura que los datos originales puedan ser verificados y que pueda conocerse si los datos que contiene el recurso de FHIR han sido alterado o modificados (el valor hash será totalmente distinto en tal caso).
+Como el identificador UUID del recurso de FHIR (informe de laboratorio) es único y unívoco, el valor hash SHA-256 obtenido será también unívoco, es decir, no podrá obtenerse el mismo valor hash a partir de ningún otro recurso de FHIR, lo que asegura que los datos originales puedan ser verificados y que pueda conocerse si los datos que contiene el recurso de FHIR han sido alterados o modificados (el valor hash será totalmente distinto en tal caso).
 
 De esta manera, una vez generado el recurso de FHIR y el valor hash asociado al identificador único del recurso de FHIR, la organización que crea los datos puede guardar el valor hash generado utilizando la red de blockchain de la Fundación UNID. El valor hash queda asociado en la red de blockchain con el identificador UUID del recurso de FHIR, de forma que un tercero podrá validar los datos originales siguiendo estos pasos:  
 
@@ -273,7 +275,7 @@ De esta manera, una vez generado el recurso de FHIR y el valor hash asociado al 
 4. En caso de que no coincidan, puede pedirse a la blockchain que recupere la historia del recurso de FHIR, para obtener los valores hash almacenados cada vez que se haya modificado el recurso de FHIR. De esta forma se puede comprobar si el valor hash calculado fue válido en algún estado anterior del recurso de FHIR (los datos recibidos están obsoletos) o si por el contrario los datos recibidos no han sido certificados en ningún momento en la red de blockchain.
 
 
-Por tanto, cuando una aplicación recibe los datos en FHIR del paciente, donante o cliente, tanto en el ámbito sanitario como en otros ámbitos, puede comprobar la huella digital de los datos para verificar la autenticidad de los mismos. Posteriormente, los datos FHIR a un formato simplificado "plano" de UHC, a un formulario estandarizado JSON Schema Form y / o usar el código HTML correspondiente a estos datos, utilizando el servicio de ayuda de UHC u otras funciones.
+Por tanto, cuando una aplicación recibe los datos del paciente, donante o cliente, tanto en el ámbito sanitario como en otros ámbitos, puede comprobar la huella digital de los datos para verificar la autenticidad de los mismos. Posteriormente, los datos FHIR pueden convertirse a un formato simplificado "hoja" (sheet) de UHC, a un formulario estandarizado JSON Schema Form y / o usar el código HTML correspondiente a estos datos, utilizando el servicio de ayuda de UHC u otras funciones.
 
 La Fundación UNID está desarrollando, en colaboración con la empresa Conéctate Soluciones y Aplicaciones SL, una web de UHC para organizaciones y profesionales que permite realizar los procesos de una manera gráfica, de manera que cualquier profesional de una organización que colabore en el testeo de UHC con la fundación UNID, aunque no tenga conocimientos de programación y no sepa de terminología sanitaria, pueda ver cómo generar recursos de FHIR, generar la huella digital o *hash* de los datos, verificar la firma digital de los datos, etc. Esta web también puede ser utilizada para enviar datos médicos como la Historia Clínica de la persona en el formato internacional IPS (aprobado en Europa por el CEN) mediante conexiones encriptadas, directamente al móvil de la persona, de manera segura y evitando que las comunicaciones de los datos puedan ser interceptados por terceros malintencionados (hackers).
 <p>&nbsp  </p>
@@ -310,7 +312,7 @@ De manera similar, también se pueden utilizar los formatos "sheet" de UHC dentr
 <sub>*Esquema básico que muestra cómo una "hoja" (sheet) de UHC es introducida en una credencial verificable (VC) según el estándar de W3C*</sub>
 <p>&nbsp  </p>
 
-La característica principal de las credenciales verificables es que pueden ser firmadas digitalmente en el formato estandarizado por W3C, generado un objeto "proof" en el formato Linked Data Proof o LD-Proof.
+La característica principal de las credenciales verificables es que pueden ser firmadas digitalmente en el formato estandarizado por W3C, generando un objeto "proof" en el formato Linked Data Proof (LD-Proof).
 
 Los datos FHIR en una credencial verificable pueden ser firmados utilizando una credencial verificable o utilizando un recurso FHIR Provenance, que podría estar contenido dentro del recurso FHIR DiagnosticReport (utilizando el campo "contained" para ello) según las especificaciones de FHIR, o bien podría ser un recurso de FHIR adicional al recurso DiagnosticReport, tal y como está recogido en [United States Core Data for Interoperability (USCDI)](https://www.healthit.gov/isa/united-states-core-data-interoperability-uscdi). En este último caso, el campo "credentialSubject" de la credencial verificable contendría dos recursos de FHIR, uno con el informe de laboratorio (DiagnosticReport) y otro con la prueba de procedencia (Provenance).
 
@@ -323,7 +325,7 @@ La Fundación UNID implementa en UHC la patente "[Protocolo Unificado de Identif
 
 En FHIR las referencias a Patient, Practitioner, Organization y a otros recursos como Immunization, DiagnosticReport, etc. se crean utilizando el nombre del recurso al que se refieren y añadiendo a continuación el identificador del recurso, separado con una barra diagonal, por ejemplo "Patient/identificador".
 
-La Fundación UNID utiliza UUID v4 como identificador único que puede ser generado por cualquier organización para codificar recursos FHIR de forma universal, y que es compatible con International Patient Summary (IPS). De esta manera, la referencia en FHIR a un resultado de laboratorio sería "DiagnosticReport/<uuid>" y la referencia de una vacunación sería "Immunization/<uuid>".
+La Fundación UNID utiliza UUID v4 como identificador único que puede ser generado por cualquier organización para codificar recursos FHIR de forma universal, y que es compatible con International Patient Summary (IPS). De esta manera, la referencia en FHIR a un resultado de laboratorio sería "DiagnosticReport/uuid-v4" y la referencia de una vacunación sería "Immunization/uuid-v4".
 
 Aplicando esto mismo a la identificación de personas, pacientes, profesionales, organizaciones y servicios de salud, la Fundación UNID proporciona un identificador universal a todas las partes relacionadas, de manera que pueda verificarse su autenticidad y su identidad.
 
@@ -331,7 +333,7 @@ Así, utilizando UUID v4 como base para la codificación de las identidades, com
 
 A modo de ejemplo, el Identificador Universal de la Fundación UNID se puede representar de las siguientes formas:
 
-| Type                  | Description |
+| Tipo                  | Descripción |
 | ---                   | --- |
 |*Paciente*                | *persona con un historial médico*|
 |UNID URN               | urn:unid:patient:uuid:uuid-v4|
@@ -357,13 +359,13 @@ Los productos de origen biológico pueden estar codificados con diferentes siste
 
 La tecnología de UHC permite verificar la trazabilidad de los productos biológicos a lo largo de toda la cadena de la salud y también por las personas y por otras organizaciones y profesionales ajenos a la salud, como en el caso de verificación de vacunación contra COVID-19.
 
-A partir del código de barras de un producto de origen biológico, tanto los profesionales y servicios de salud como los pacientes que compran o reciben estos productos para ser utilizados en tratamientos médicos podrán obtener y verificar la infomración del producto, de manera unificada para productos de diferentes fabricantes, distintos sistemas de codificación y en diferentes normativas, mejorando la seguridad y la trazabilidad de estos productos y permitiendo a las personas conocer toda la información de los productos que les son suministrados o implantados.
+A partir del código de barras de un producto de origen biológico, tanto los profesionales y servicios de salud como los pacientes que compran o reciben estos productos para ser utilizados en tratamientos médicos podrán obtener y verificar la información del producto, de manera unificada para productos de diferentes fabricantes, distintos sistemas de codificación y en diferentes normativas, mejorando la seguridad y la trazabilidad de estos productos y permitiendo a las personas conocer toda la información de los productos que les son suministrados o implantados.
 
 A modo de ejemplo, el Identificador Universal de Productos Biológicos de la Fundación UNID se puede representar de las siguientes formas:
 
-| Type                         	    | Description |
+| Tipo                         	    | Descripción |
 | ---				    | --- |
-|*Dispositivos / productos médicos*   | *ejemplo.: trazabilidad de una vacuna, hemoderivado, etc.*|
+|*Dispositivos / productos médicos*   | *ejemplo: trazabilidad de una vacuna, hemoderivado, etc.*|
 |FHIR Reference                     | Device/uuid-v4| 
 |FHIR Identifier IETF               | urn:uuid:uuid-v4| 
 |IPS Full URN                       | urn:uuid:uuid-v4| 
@@ -372,7 +374,7 @@ A modo de ejemplo, el Identificador Universal de Productos Biológicos de la Fun
 
 UHC permite certificar y verificar la información de los productos biológicos fuera del ámbito de la salud, por ejemplo para verificar los datos de vacunación de COVID-19 en turismo, congresos, etc., de manera que puede verificarse en la red de blockchain de la Fundación UNID la autenticidad y la trazabilidad de una vacuna fabricada por la industria farmacéutica y administrada en un procedimiento de vacunación.
 
-De esta manera, las organizaciones y profesionales sanitarios que crean datos de salud y de productos de origen biológico pueden registrar la huella digital de los datos generados en la red de blockchain, de manera descentralizada, lo que permite que la autenticidad de los datos pueda ser verificada tanto por los pacientes que reciban estos datos como por otros profesionales y organizaciones con los que la persona comparta los datos posteriormente.
+De esta manera, las organizaciones y profesionales sanitarios que crean datos de salud y de productos de origen biológico pueden registrar la huella digital de los mismos en la red de blockchain, de manera descentralizada, lo que permite que la autenticidad de los datos pueda ser verificada tanto por los pacientes que reciban estos datos como por otros profesionales y organizaciones con los que la persona comparta los datos posteriormente.
 <p>&nbsp  </p>
 
 ## **Datos para investigación**
@@ -398,12 +400,185 @@ Este objeto de datos es anonimizado y deidentificado para generar un objeto UHC 
 	"codesLOINC": ["94762-2"],
 	"codesSNOMED": ["260385009"],
 	"dateTime": "2021-02-18",
-	"recourceType": "DiagnosticReport",
+	"resourceType": "DiagnosticReport",
 	"region":"ESP"
 }
 ```
 
 Posteriormente, el objeto anonimizado y deidentificado se envía desde el servicio de salud a la Fundación UNID o a otra organización que haya sido aprobada por la Fundación como hub para recoger datos de investigación (por ejemplo, universidades).
 
-Mediante un smart-contract privado en la blockchain de la Fundación UNID, se comprueba que los datos recibidos son válidos y se registra el objeto en el ledger público del canal mediante otro smart-contract, de manera que todos los *peer nodes* o servidores puedan consultar los datos que se hayan ido guardando desde distintos hubs y de manera anónima para realizar estadísticas o estudios de investigación, sin que pueda conocerse el servicio de salud origen de los datos en la blockchain.
+Mediante un smart-contract privado en la blockchain de la Fundación UNID, se comprueba que los datos recibidos son válidos y se registra el objeto en el ledger público del canal mediante otro smart-contract, de manera que todos los *peer nodes* o servidores puedan consultar los datos que se hayan almacenado, de manera anónima, desde distintos hubs para realizar estadísticas o estudios de investigación, sin que pueda conocerse el servicio de salud origen de los datos en la blockchain.
+<p>&nbsp  </p>
 
+## **Sistemas Informáticos Hospitalarios (HIS) resilientes y atención sanitaria descentralizada**
+
+Tras las crisis provocadas por el ataque de ransonware Wannacry en 2017 y por la pandemia de COVID-19 en 2020, la transformación digital en salud tiene que estar orientada a la descentralización de la atención sanitaria, para empoderar a los pacientes.
+
+Hasta 2021, los sistemas hospitalarios se han basado en un modelo centralizado, en el que todas las terminales del personal sanitario se conectaban a un sistema central para poder leer y escribir datos en la historia clínica electrónica que tuviera esa persona en ese hospital. Además, las personas no tenían una forma sencilla de poder llevar la información de un sistema a otro y en cualquier idioma, por ejemplo en viajes de trabajo o de ocio. Por tanto, los profesionales sanitarios no podían tener una visión global de la persona, lo que provocaba una peor atención sanitaria y un mayor gasto sanitario (duplicación de pruebas diagnósticas, reingresos, etc.). Por otro lado, el profesional sanitario que atendía al paciente tampoco podía emitir un informe electrónico que fuera enviado de forma automática y segura al paciente. 
+
+Utilizando FHIR, IPS, los identificadores UUID v4, el Identificador Universal de Salud y la identidad digital de la Fundación UNID, las personas se convierten en 2021 en el centro del ecosistema de la salud. Mediante UHC y el Identificador Universal de Salud, la persona puede unificar sus datos en el teléfono móvil, acudir a un servicio de salud habitual o a uno nuevo, mostrar su Identificador Universal de Salud y establecer una conexión encriptada con el profesional que le atiende para compartir datos de salud en los estándares internacionales.
+
+Así mismo, utilizando el Identificador Universal de Salud, la identidad digital de la Fundación UNID, los identificadores UUID v4 y comunicación [DIDComm](https://github.com/decentralized-identity/didcomm-messaging), la aplicación del profesional sanitario puede:
+1. Leer la información de la historia clínica que le envía la persona en formato FHIR / IPS.
+2. Generar nuevos datos FHIR de forma descentraliza, identificando cada nuevo recurso de FHIR con un identificador UUID v4.
+3. Firmar digitalmente los datos con las claves de firma accesibles de forma segura desde el dispositivo del profesional sanitario.
+4. Enviar los nuevos datos médicos generados al paciente de forma segura, utilizando encriptación asimétrica para cifrar el mensaje.
+5. Sincronizar los nuevos datos generados por la aplicación del profesional sanitario en el sistema hospitalario central y certificarlos en la red de blockchain, cuando se encuentren disponibles la conexión de red y el sistema hospitalario.
+<p>&nbsp  </p>
+
+## **FHIR: versatilidad y complejidad del estándar internacional**
+
+FHIR es el estándar international para la atención sanitaria transfronteriza. Es un sistema muy versátil, pero su versatilidad se basa en complejas estructuras anidadas, lo que se traduce en mayor complejidad a la hora de realizar búsquedas, de convertir los datos desde o hacia otros formatos y de que pueda ser entendido y utilizado de una forma rápida y práctica por parte de cualquier aplicación y sistema informático.
+
+UHC permite simplificar la adopción de FHIR y su utilización más allá del ámbito sanitario, por ejemplo para verificar resultados de laboratorio y vacunaciones de COVID-19 fuera del ámbito de la salud.
+
+Como ejemplo, el código de la enfermedad objetivo de una vacunación (*targetDisease*) no está accesible directamente en el recurso FHIR Immunization, sino que los códigos están contenidos en una estructura anidada de varios niveles.
+
+En este ejemplo, la enfermedad objetivo de la vacunación es COVID-19 y se codifica con dos sistemas diferentes: el código **U07.1** del sistema *ICD-10* y el código **840539006** del sistema *SNOMED*:
+
+```json
+{
+   "doseQuantity":{
+      "code":"ml",
+      "system":"http://unitsofmeasure.org",
+      "value":0.3
+   },
+   "id":"universal-immunization-id",
+   "lotNumber":"lot-1234",
+   "manufacturer":{
+      "display":"Pharmaceutical Laboratory",
+      "identifier":{
+         "type":{
+            "coding":[
+               {
+                  "code":"PHL",
+                  "system":"http://terminology.hl7.org/CodeSystem/MVX"
+               }
+            ]
+         }
+      }
+   },
+   "occurrenceDateTime":"2020-02-18",
+   "patient":{
+      "reference":"Patient/universal-health-id"
+   },
+   "protocolApplied":[
+      {
+         "doseNumberPositiveInt":1,
+         "seriesDosesPositiveInt":2,
+         "targetDisease":[
+            {
+               "coding":[
+                  {
+                     "code":"U07.1",
+                     "system":"http://hl7.org/fhir/ValueSet/icd-10"
+                  },
+                  {
+                     "code":"840539006",
+                     "system":"http://snomed.info/sct"
+                  }
+               ]
+            }
+         ]
+      }
+   ],
+   "resourceType":"Immunization",
+   "status":"completed",
+   "vaccineCode":{
+      "coding":[
+         {
+            "code":"J07BX03",
+            "system":"http://www.whocc.no/atc"
+         },
+         {
+            "code":"207",
+            "system":"http://hl7.org/fhir/sid/cvx"
+         }
+      ]
+   }
+}
+```
+<sub>Ejemplo de recurso *FHIR Immunization* (vacunación) contra la enfermedad COVID-19 (enfermedad objetivo o *"targetDisease"*)</sub>
+<p>&nbsp  </p>
+
+UHC permite que este recurso de FHIR pueda ser creado y entendido de manera más sencilla por cualquier sistema informático mediante "hojas" (sheets) de UHC de esta manera:
+
+```javascript
+{
+    doseAmountCode: "ml",
+    doseAmountValue: 0.3,
+    id: "universal-immunization-id",
+    lotNumber: "lot-1234", // Vaccine lot number.
+    manufacturerReference: "Organization/universal-id",
+    occurrenceDateTime: "2020-02-18", // Vaccine administration date.
+    patientReference: "Patient/universal-health-id",
+    protocolDoseAdministered: 1, // Number of the dose administered for immunity
+    protocolTotalDosesRecommended: 2, // Recommended number of doses for immunity
+    protocolTargetDiseasesCodesICD10: ["U07.1"], // Disease(s) being targetted: WHO ICD-10 code(s)
+    protocolTargetDiseasesCodesSNOMED: ["840539006"], //Disease(s) being targetted: SNOMED code(s)
+    status: "completed",
+    vacineCodeATC: "J07BX03", // Vaccine administered: ATC code	
+    vacineCodeCVX: "207", // Vaccine administered: HL7 CVX code	
+}
+```
+<sub>Ejemplo de hoja de UHC ("sheet") correspondiente al recurso *FHIR Immunization* contra la enfermedad COVID-19</sub>
+<p>&nbsp  </p>
+
+Por otro lado, las referencias al paciente en el recurso *Immunization* pueden ampliarse de esta manera dentro según las especificaciones de FHIR:
+
+```json
+{
+    "patient": {
+        "identifier": {
+            "assigner": {
+                "display": "Ministerio del Interior - Gobierno de España"
+            },
+            "period": {
+                "end": "2028-04-30",
+                "start": "2018-04-30"
+            },
+            "system": "urn:oid:1.3.6.1.4.1.19126.3",
+            "type": {
+                "coding": [
+                    {
+                        "code": "NNESP",
+                        "display": "National Person Identifier",
+                        "system": "http://hl7.org/fhir/v2/0203/"
+                    }
+                ],
+                "text": "Documento Nacional de Identidad"
+            },
+            "use": "official",
+            "value": "DNI123456"
+        },
+        "reference": "Patient/universal-health-id",
+        "type": "Patient"
+    },
+    "resourceType": "Immunization"
+}
+```
+<sub>Ejemplo del objeto de datos "patient" de un ciudadano español en un recurso FHIR Immunization</sub>
+<p>&nbsp  </p>
+
+De manera simplificada, el objeto "patient" anterior puede ser creado y convertido en la hoja ("sheet") *Immunization* de UHC de usando estos campos:
+
+```javascript
+{
+   patientIdentifierAssignerDisplay: "Ministerio del Interior - Gobierno de España",
+   patientIdentifierCode: "NNESP", // HL7 type code: Spanish National Person Identifier
+   patientIdentifierCodeCustomText: "Documento Nacional de Identidad",
+   patientIdentifierCodeDisplay: "National Person Identifier",
+   patientIdentifierCodeSystemUri: "http://hl7.org/fhir/v2/0203/", // HL7 Identifier Type system
+   patientIdentifierPeriodEnd: "2028-04-30",
+   patientIdentifierPeriodStart: "2018-04-30",
+   patientIdentifierSystemUri: "urn:oid:1.3.6.1.4.1.19126.3", // Spanish's National Person Identifier System
+   patientIdentifierUse: "official",
+   patientIdentifierValue: "DNI123456", // The value of the Spanish National Person Identifier
+}
+```
+<sub>Campos correspondientes al identificador del paciente en una hoja ("sheet") UHC Immunization</sub>
+<p>&nbsp  </p>
+
+
+UHC permite simplificar y extender el uso de FHIR a cualquier sistema, tanto en el ámbito de la salud como fuera del ámbito de la salud, de manera que se puedan crear y entender las complejas estructuras anidadas de FHIR de una forma más simple y fácil de utilizar.
+<p>&nbsp  </p>
