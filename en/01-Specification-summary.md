@@ -3,16 +3,18 @@
 Copyright © 2021 UNID Foundation. All rights reserved. 
 <p>&nbsp  </p>
 
-## **Historia clínica unificada y universal**
+## **Unified and universal medical history**
 
-The [UNID Foundation](http://unid.es) and the spanish company Conéctate Soluciones y Aplicaciones SL ([ConnectHealth](https://connecthealth.info)), have developed Universal Health Chain (UHC) as a platform for the secure communication of health data between people and different health services and other services.
+The [UNID Foundation](http://unid.es) and the spanish company Conéctate Soluciones y Aplicaciones SL ([ConnectHealth](https://connecthealth.info)), have developed Universal Health Chain (UHC) as a platform for the secure communication of health data between people and different health services and other type of services.
 
 [![](https://img.youtube.com/vi/LIEneYmrYRY/0.jpg)](https://www.youtube.com/watch?v=LIEneYmrYRY)
 
 <sub>*UHC platform video (click to open Youtube)*</sub>
 <p>&nbsp  </p>
 
-People can securely unify their health data from public and private organizations on their mobile phone, along with their [Universal Health Identifier] (https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2020136289&tab=PCTBIBLIO). Universal Health Chain (UHC) uses the international standards [HL7 FHIR R4](http://hl7.org/fhir/R4), [International Patient Summary (IPS)](http://hl7.org/fhir/uv/ips), [Verifiable Credentials (VC)](https://www.w3.org/TR/vc-data-model/), among others, and it also allows adding PDF files, although PDF is not the international format for the exchange of medical data or for cross-border healthcare, as HL7 FHIR and IPS are.
+People can securely unify their health data from public and private organizations on their mobile phone, along with their [Universal Health Identifier] (https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2020136289&tab=PCTBIBLIO). Universal Health Chain (UHC) uses the international standards [HL7 FHIR R4](http://hl7.org/fhir/R4), [International Patient Summary (IPS)](http://hl7.org/fhir/uv/ips), [Verifiable Credentials (VC)](https://www.w3.org/TR/vc-data-model/), among others. Although the
+international format for the exchange of medical data for cross-border healthcare is
+HL7 FHIR and IPS, UHC also allows adding PDF files.
 
 IPS is a FHIR document with some mandatory and other optional medical history sections, [defined by the European Committee for Standardization (CEN)](https://www.cen.eu/news/brief-news/Pages/NEWS-2021-009.aspx).
 ![](http://hl7.org/fhir/uv/ips/IPS_doc_library.png)
@@ -30,9 +32,9 @@ The UHC-personal application allows the person to add data from different public
 
 Patient or donor medical history data can be received or incorporated into the UHC-personal application in two different ways:
 
-1.  The person downloads the data from different healthcare services (public and private) using a username and password on each system and incorporates the data into UHC-personal. This can be done adding the files manually to the application in both PDF and FHIR JSON formats. Also will be possible to automatically connect and download data form healthcare services using Smart-On-FHIR.
+1.  The person downloads the data from different healthcare services (public and private) using a username and password on each system and incorporates the data into UHC-personal. This can be done by adding the files manually to the application in either PDF and FHIR JSON formats. Also will be possible to automatically connect and download data form healthcare services using Smart-On-FHIR.
 
-2.  The healthcare service sends to the UHC-personal application the data of the person, securely shared via an encrypted connection that is created from the person's Universal Health Identifier, so that only the person can decrypt the data on their mobile phone. This option prevents Man-In-The-Middle attacks, protecting the personal and medical data from hackers.
+2.  The healthcare service sends the data of the person to the UHC-personal application, securely shared via an encrypted connection that is created from the person's Universal Health Identifier, so that only the owner can decrypt the data on their mobile phone. This option prevents Man-In-The-Middle attacks, protecting the personal and medical data from hackers.
 
 [![](https://img.youtube.com/vi/5f0zP3O5B7c/0.jpg)](https://www.youtube.com/watch?v=5f0zP3O5B7c)
 
@@ -41,9 +43,9 @@ Patient or donor medical history data can be received or incorporated into the U
 
 ## **Regulations on access and portability of health data for cross-border healthcare**
 
-In the US, the USCDI regulation make it mandatory for healthcare services to provide their clients (patients) with health data in the FHIR R4 format, using an API compatible with FHIR and Oauth2, so that people can login into a FHIR server with a username and password, view their data and download the desired data in FHIR R4 format; also the same can be done through a third-party applications that connects to the FHIR server with the person's username and password to obtain an authentication token in order to automatically download the data into the application.
+In the US, the USCDI regulation makes it mandatory for healthcare services to provide their clients (patients) with health data in the FHIR R4 format, using an API compatible with FHIR and Oauth2, so that people can login into a FHIR server with a username and password, view their data and download the desired data in FHIR R4 format; also the same can be done through a third-party applications that connects to the FHIR server with the person's username and password to obtain an authentication token in order to automatically download the data into the application.
 
-However, this does not prevent Man-In-The-Middle attacks on the traffic between the health provider's API server and the user's application or website, in case the user's network is compromised ( for example a WIFI network through DNS spoofing attack). UHC solves this problem by using the encrypted peer-to-peer messaging service and the UHC-personal app.
+However, this does not prevent Man-In-The-Middle attacks on the traffic between the health provider's API server and the user's application or website, in case the user's network is compromised (for example, a WIFI network through DNS spoofing attack). UHC solves this problem by using the encrypted peer-to-peer messaging service and the UHC-personal app.
 
 In Europe regulations specify that data has to be delivered digitally to the person in a common electronic format for cross-border healthcare. This format is [*International Patient Summary* (IPS), established by the European Committee for Standardization (CEN)](https://www.cen.eu/news/brief-news/Pages/NEWS-2021-009.aspx), that uses FHIR R4 and establishes different [sections in the FHIR document that contains the patient's medical history](http://hl7.org/fhir/uv/ips/ipsStructure.html).
 
@@ -85,7 +87,7 @@ In addition, Hyperledger Fabric allows peer nodes (or servers) from the same org
 ![](https://hyperledger-fabric.readthedocs.io/en/release-2.2/_images/PrivateDataConcept-3.png)
 <p>&nbsp  </p>
 
-In this way, an organization can share private information between different peer nodes of its organization, and it can also create PDCs to share private information with clients or suppliers of its organization, or a public administration in a territory can share data with different public administrations of other territories or with other types of organizations such as laboratories (for example for data reporting).
+In this way, an organization can share private information between different peer nodes of its organization, and it can also create PDCs to share private information with clients or suppliers of its organization, or a public administration in a territory can share data with different public administrations of other territories or with other types of organizations such as laboratories (for example, for data reporting).
 
 ![](https://hyperledger-fabric.readthedocs.io/en/release-2.2/_images/PrivateDataConcept-1.png)
 
@@ -322,9 +324,9 @@ The UHC helper service will allow digital signatures to be generated and verifie
 
 ## **Universal Health Identifier**
 
-The UNID Foundation implements in UHC the patent "[Unified Identification Protocol in Training and Health](https://patentscope.wipo.int/search/es/detail.jsf?docId=WO2020136289&tab=PCTBIBLIO)". In this way, universal identification of patients, donors, health professionals, health services, organizations, biological products and also of the processes carried out is achieved in the health chain, also for medical encounters, diagnostic results, procedures, interventions, prescriptions, etc.
+The UNID Foundation implements in UHC the patent "[Unified Identification Protocol in Training and Health](https://patentscope.wipo.int/search/es/detail.jsf?docId=WO2020136289&tab=PCTBIBLIO)". In this way, universal identification of patients, donors, health professionals, health services, organizations, biological products and also of the processes carried out such as medical encounters, diagnostic results, procedures, interventions, prescriptions, etc.
 
-*FHIR References* to Patient, Practitioner, Organization and other resources such as Immunization, DiagnosticReport, etc. are created using the name of the resource they refer to and then adding the identifier of the resource, separated with a forward slash, for example *"Patient/identifier"*.
+*FHIR References* to Patient, Practitioner, Organization and other resources such as Immunization, DiagnosticReport, etc. are created using the name of the resource they refer to and then adding the identifier of the resource, separated by a forward slash, for example, *"Patient/identifier"*.
 
 The UNID Foundation uses **UUID v4** as a unique identifier that can be generated by any organization to encode FHIR resources in a universal way, also compatible with International Patient Summary (IPS). Thus, the FHIR reference to a laboratory test result would be *"DiagnosticReport/uuid-v4"* and the reference to a vaccination would be *"Immunization/uuid-v4"*.
 
@@ -349,7 +351,7 @@ The UNID Foundation registers in the blockchain network the digital identities t
 
 ## **Universal Identifier of Biological Products for medicinal uses**
 
-Products of biological origin such as vaccines or hemoderivatives are medical devices according to different regulations and have different UDIs for each legislation, for example in [Europe](https://ec.europa.eu/docsroom/documents/36664/attachments/1/translations/en/renditions/native), [USA.](https://www.fda.gov/medical-devices/unique-device-identification-system-udi-system/udi-basics) and / or [Australia](https://www.mtaa.org.au/unique-device-identification-udi). They are normally implanted, injected or used in a patient, such as plasma in aesthetic treatments ([PRP or platelet rich plasma](https://en.wikipedia.org/wiki/Platelet-rich_plasma)), vaccines, packed red blood cells, medicines made from immunoglobulins and other types of products of biological origin.
+Products of biological origin such as vaccines or hemoderivatives are medical devices according to different regulations and have different UDIs for each legislation, for example, in [Europe](https://ec.europa.eu/docsroom/documents/36664/attachments/1/translations/en/renditions/native), [USA.](https://www.fda.gov/medical-devices/unique-device-identification-system-udi-system/udi-basics) and / or [Australia](https://www.mtaa.org.au/unique-device-identification-udi). They are normally implanted, injected or used in a patient, such as plasma in aesthetic treatments ([PRP or platelet rich plasma](https://en.wikipedia.org/wiki/Platelet-rich_plasma)), vaccines, packed red blood cells, medicines made from immunoglobulins and other types of products of biological origin.
 
 Products of biological origin can be encoded with different systems such as:
 
@@ -372,7 +374,7 @@ As an example, the UNID Foundation's Universal Identifier for Biological Product
 |UNID URN                           | urn:unid:device:uuid:uuid-v4| 
 |UNID DID                           | did:unid:device:uuid:uuid-v4| 
 
-UHC allows certifying and verifying the information of biological products outside the health sector, for example to verify COVID-19 vaccination data in tourism, congresses, etc., so that the authenticity and traceability of a vaccine manufactured by the pharmaceutical industry and administered in a vaccination procedure can be verified in the blockchain network of the Fundación UNID.
+UHC allows certifying and verifying the information of biological products outside the health sector, for example, to verify COVID-19 vaccination data in tourism, congresses, etc., so that the authenticity and traceability of a vaccine manufactured by the pharmaceutical industry and administered in a vaccination procedure can be verified in the blockchain network of the Fundación UNID.
 
 In this way, organizations and health professionals that create health data or biological products data can register their hash in the blockchain network, in a decentralized way, which allows the authenticity of the data to be verified both by patients who receive this data and by other professionals and organizations with whom the person subsequently shares the data
 <p>&nbsp  </p>
@@ -392,7 +394,7 @@ As an example, the FHIR DiagnosticReport laboratory test result shown above is s
 }
 ```
 
-This data object is anonymized and deidentified to generate a UHC object of type "research". An example with the result of the process is shown below:
+This data object is anonymized and deidentified to generate a UHC object of type "research". An example, with the result of the process is shown below:
 
 ```json
 {
@@ -413,7 +415,7 @@ Data received is verified through a private smart-contract on the UNID Foundatio
 
 Following the crises caused by the Wannacry ransonware attack in 2017 and the COVID-19 pandemic in 2020, the digital transformation in health has to be oriented towards the decentralization of healthcare, to empower patients.
 
-Until 2021, hospital information systems have been based on a centralized model, in which all health personnel terminals were connected to a central system to be able to read and write data in the electronic medical record that that person had in that system. In addition, people did not have a simple way of being able to carry information from one system to another and in any language, for example on business or vacation trips. Therefore, health professionals could not have a global vision of the person, which led to worse health care and higher health costs (duplication of diagnostic tests, readmissions, etc.). On the other hand, the healthcare professional attending the patient could not sent an electronic report automatically and securely to the patient.
+Until 2021, hospital information systems have been based on a centralized model, in which all health personnel terminals were connected to a central system to be able to read and write data in the electronic medical record that that person had in that system. In addition, people did not have a simple way of being able to carry information from one system to another and in any language, for example, on business or vacation trips. Therefore, health professionals could not have a global vision of the person, which led to worse health care and higher health costs (duplication of diagnostic tests, readmissions, etc.). On the other hand, the healthcare professional attending the patient could not sent an electronic report automatically and securely to the patient.
 
 In 2021 people become the center of the health ecosystem, thanks to FHIR and IPS standards, UUID v4 identifiers, the Universal Health Identifier and the digital identity of the UNID Foundation. Through UHC and the Universal Health Identifier, the person can unify their data on the mobile phone, go to a regular health service or a new one, show their Universal Health Identifier and establish an encrypted connection with the professional who attends to them to share health data in international standards.
 
@@ -429,7 +431,7 @@ Likewise, using the Universal Health Identifier, the digital identity of the UNI
 
 FHIR is the international standard for cross-border healthcare. It is a very versatile system, but its versatility is based on complex nested structures, which translates into greater complexity when it comes to searching, converting data from or to other formats and allowing it to be understood and used in a way fast and practical by any application and computer system.
 
-UHC simplifies the adoption of FHIR and its use beyond the healthcare setting, for example to verify laboratory results and COVID-19 vaccinations outside the healthcare setting.
+UHC simplifies the adoption of FHIR and its use beyond the healthcare setting, for example, to verify laboratory results and COVID-19 vaccinations outside the healthcare setting.
 
 As an example, the code of the target disease for a vaccination (* targetDisease *) is not directly accessible in the FHIR Immunization resource, but rather the codes are contained in a nested multi-level structure.
 
@@ -559,7 +561,7 @@ On the other hand, the references to the patient in the *Immunization* resource 
 <sub>Example of the *"patient"* data object of a Spanish citizen in a FHIR Immunization resource</sub>
 <p>&nbsp  </p>
 
-In a simplified way, the above *"patient"* object can be created and converted to a *UHC Immunization sheet* using these fields::
+In a simplified way, the above *"patient"* object can be created and converted to a *UHC Immunization sheet* using these fields:
 
 ```javascript
 {
