@@ -7,7 +7,7 @@ Copyright © 2021 UNID Foundation. All rights reserved.
 
 The [UNID Foundation](http://unid.es) and the spanish company Conéctate Soluciones y Aplicaciones SL ([ConnectHealth](https://connecthealth.info)), have developed Universal Health Chain (UHC) as a platform for the secure communication of health data between people and different health services and other type of services.
 
-[![](https://img.youtube.com/vi/LIEneYmrYRY/0.jpg)](https://www.youtube.com/watch?v=LIEneYmrYRY)
+[![](https://img.youtube.com/vi/6Ans2_UPyXY/0.jpg)](https://www.youtube.com/watch?v=6Ans2_UPyXY)
 
 <sub>*UHC platform video (click to open Youtube)*</sub>
 <p>&nbsp  </p>
@@ -36,7 +36,7 @@ Patient or donor medical history data can be received or incorporated into the U
 
 2.  The healthcare service sends the data of the person to the UHC-personal application, securely shared via an encrypted connection that is created from the person's Universal Health Identifier, so that only the owner can decrypt the data on their mobile phone. This option prevents Man-In-The-Middle attacks, protecting the personal and medical data from hackers.
 
-[![](https://img.youtube.com/vi/5f0zP3O5B7c/0.jpg)](https://www.youtube.com/watch?v=5f0zP3O5B7c)
+[![](https://img.youtube.com/vi/GtZTHiHmcZk/0.jpg)](https://www.youtube.com/watch?v=GtZTHiHmcZk)
 
 <sub>*UHC-personal app video (click to open Youtube)*</sub>
 <p>&nbsp  </p>
@@ -57,6 +57,7 @@ UHC provides the tool that allows to comply with the different regulations, sinc
 UHC is a resilient system against viruses and computer attacks (for example, Wannacry in 2017), terrorism or natural disasters. It allows health systems and applications of health professionals to function autonomously even without an internet connection, since there is the possibility of sharing data between the person's mobile phone and a health service using Bluetooth in case of networks or computer systems fall down.
 
 ![](https://frontera.net/wp-content/uploads/2017/05/WannaCry-e1494998398416.png)
+
 <sub>*(image from https://frontera.net/news/global-macro/which-global-companies-were-hit-hardest-by-the-wannacry-attack/)*</sub>
 <p>&nbsp  </p>
 
@@ -69,6 +70,7 @@ Through the Universal Health Identifier and the digital identity of the UNID Fou
 Hyperledger Fabric is an enterprise network in which different channels can exist, similar to computer sub-networks. Being a permissioned network, each channel has established which peer nodes (organization servers) can belong to it. In the case of UHC there will be different channels, e.g. "HealthCare" (healthcare and donations) and "Biological Products" (registration and traceability of biological products for medicinal purposes).
 
 ![](https://www.serial-coder.com/img/posts/Demystifying-Hyperledger-Fabric/Fabric-Explained-4%20%28-sharp-2%29.png)
+
 <sub>*(image from https://www.serial-coder.com/post/demystifying-hyperledger-fabric-fabric-architecture)*</sub>
 <p>&nbsp  </p>
 
@@ -433,9 +435,9 @@ FHIR is the international standard for cross-border healthcare. It is a very ver
 
 UHC simplifies the adoption of FHIR and its use beyond the healthcare setting, for example, to verify laboratory results and COVID-19 vaccinations outside the healthcare setting.
 
-As an example, the code of the target disease for a vaccination (* targetDisease *) is not directly accessible in the FHIR Immunization resource, but rather the codes are contained in a nested multi-level structure.
+As an example, the code of the target disease for a vaccination (*targetDisease*) is not directly accessible in the FHIR Immunization resource, but rather the codes are contained in a nested multi-level structure.
 
-In this example, the target disease for vaccination is COVID-19 and is coded using two different systems: the **U07.1** code from the *ICD-10* system and the ** 840539006 ** code from the *SNOMED* system:
+In this example, the target disease for vaccination is COVID-19 and is coded using two different systems: the **U07.1** code from the *ICD-10* system and the **840539006** code from the *SNOMED* system:
 
 ```json
 {
