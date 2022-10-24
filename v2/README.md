@@ -8,10 +8,17 @@ Copyright © 2022 CONNECTING SOLUTION & APPLICATIONS LTD.
 
 <p>&nbsp  </p>
 
-### **[Documentación en Español](./es/)**
-1. [Resumen de especificaciones](./es/01-Resumen-especificaciones.md)
-<p>&nbsp  </p>
 
-### **[English Documentation](./en/)**
+## **English**
+
+### **[Documentation](./en/)**
 1. [Specification summary](./en/01-Specification-summary.md)
 <p>&nbsp  </p>
+
+
+## **Español - Spanish**
+
+### **[Documentación](./es/)**
+
+1. [Resumen de especificaciones](./es/01-Resumen-especificaciones.md)
+

@@ -11,21 +11,38 @@ Copyright © 2022 CONNECTING SOLUTION & APPLICATIONS LTD.
 
 # **[UHC v2](./v2/README.md)** (2022)
 
-### **[Documentación en Español](./v2/es/)**
-1. [Resumen de especificaciones](./v2/es/01-Resumen-especificaciones.md)
+## **English**
+
+### **[Documentation](./en/)**
+1. [Specification summary](./en/01-Specification-summary.md)
 <p>&nbsp  </p>
 
-### **[English Documentation](./v2/en/)**
-1. [Specification summary](./v2/en/01-Specification-summary.md)
-<p>&nbsp  </p>
 
+## **Español - Spanish**
+
+### **[Documentación](./es/)**
+
+1. [Resumen de especificaciones](./es/01-Resumen-especificaciones.md)
+
+<p>&nbsp  </p>
 
 # **[UHC v1](./v1/README.md)** (2020)
 
-### **[Documentación en Español](./v1/es/)**
-1. [Resumen de especificaciones](./v1/es/01-Resumen-especificaciones.md)
+## **English**
+
+### **[Documentation](./v1/en/)**
+1. [Specification summary](./v1/en/01-Specification-summary.md)
+
 <p>&nbsp  </p>
 
-### **[English Documentation](./v1/en/)**
-1. [Specification summary](./v1/en/01-Specification-summary.md)
+## **Español - Spanish**
+
+### **[Documentación](./v1/es/)**
+1. [Resumen de especificaciones](./v1/es/01-Resumen-especificaciones.md)
+
+<p>&nbsp  </p>
+
+**UHC-personal app (beta 1)**
+- [Goole Play Store (España)](https://play.google.com/store/apps/details?id=com.rn_uhc)
+
 <p>&nbsp  </p>
