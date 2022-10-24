@@ -1,6 +1,10 @@
 ![](https://avatars.githubusercontent.com/u/57396025?s=200&v=4)
-# **Universal Health Chain**
-Copyright © 2021 Fundación UNID. Reservados todos los derechos. 
+# **Universal Health Chain - v1**
+Copyright © 2022 FUNDACION UNID.
+
+Copyright © 2022 CONECTATE SOLUCIONES Y APLICACIONES SL.
+
+Reservados todos los derechos. 
 <p>&nbsp  </p>
 
 ## **Historia clínica unificada y universal**
