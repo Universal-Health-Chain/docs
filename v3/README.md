@@ -1,5 +1,5 @@
 ![](https://avatars.githubusercontent.com/u/57396025?s=200&v=4)
-# **Universal Health Chain - v2**
+# **Universal Health Chain - v3**
 Copyright © FUNDACION UNID.
 
 Copyright © CONECTATE SOLUCIONES Y APLICACIONES SL.
@@ -12,13 +12,5 @@ Copyright © CONNECTING SOLUTION & APPLICATIONS LTD.
 ## **English**
 
 ### **[Documentation](./en/)**
-1. [Specification summary](./en/01-Specification-summary.md)
+1. [Introduction](./en/01-Introduction.md)
 <p>&nbsp  </p>
-
-
-## **Español - Spanish**
-
-### **[Documentación](./es/)**
-
-1. [Resumen de especificaciones](./es/01-Resumen-especificaciones.md)
-

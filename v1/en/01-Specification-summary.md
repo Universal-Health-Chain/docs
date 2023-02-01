@@ -1,8 +1,8 @@
 ![](https://avatars.githubusercontent.com/u/57396025?s=200&v=4)
 # **Universal Health Chain - v1**
-Copyright © 2022 FUNDACION UNID.
+Copyright © FUNDACION UNID.
 
-Copyright © 2022 CONECTATE SOLUCIONES Y APLICACIONES SL.
+Copyright © CONECTATE SOLUCIONES Y APLICACIONES SL.
 
 All rights reserved. 
 <p>&nbsp  </p>
@@ -66,7 +66,7 @@ UHC is a resilient system against viruses and computer attacks (for example, Wan
 <p>&nbsp  </p>
 
 UHC is based on the asymmetric Elliptical Curve Diffie-Hellman (ECDH) cryptography in which each participant has public and private keys for signing and encrypting data.
-Through the Universal Health Identifier and the digital identity of the UNID Foundation, each user (patient, professional, organization) or device (server, medical device, etc.) has a digital identity with private and public keys to sign and encrypt information.
+Through the Universal Health Identifier and the digital identity in the UNID network, each user (patient, professional, organization) or device (server, medical device, etc.) has a digital identity with private and public keys to sign and encrypt information.
 <p>&nbsp  </p>
 
 ## **UNID Foundation Blockchain**
@@ -292,7 +292,7 @@ The UNID Foundation is developing a UHC testing website for organizations and pr
 
 ## **Verifiable Credentials with FHIR**
 
-The UNID Foundation has also developed the system that allows to convert FHIR data to verifiable credentials in the international format of the World Wide Web Consortium (W3C), in collaboration with the company Conéctate Soluciones y Aplicaciones SL. As an example, a FHIR verifiable credential or VC created from a diagnostic report such as the one above, can be created by simply adding the laboratory test result in the "credentialSubject" field (which containing the object or objects to which the verifiable credential refers) in this way:
+The UNID Foundation has also developed a system that allows to convert FHIR data to verifiable credentials in the international format of the World Wide Web Consortium (W3C), in collaboration with the company Conéctate Soluciones y Aplicaciones SL. As an example, a FHIR verifiable credential or VC created from a diagnostic report such as the one above, can be created by simply adding the laboratory test result in the "credentialSubject" field (which containing the object or objects to which the verifiable credential refers) in this way:
 
 ```json
 {
@@ -340,7 +340,7 @@ Applying the same thing to the identification of people, patients, professionals
 
 Thus, using UUID v4 as a basis for the coding of identities, compatible with FHIR, IPS and also with verifiable credentials (VC) and DID documents, each of the parties that participate in the health chain has a Universal Health Identifier and a universal digital identity.
 
-As an example, the Universal Identifier of the UNID Foundation can be represented in the following ways:
+As an example, the Universal Identifier can be represented in the following ways:
 | Type                  | Description |
 | ---                   | --- |
 |*Patient*                | *person with medical history*|
@@ -423,7 +423,7 @@ Following the crises caused by the Wannacry ransonware attack in 2017 and the CO
 
 Until 2021, hospital information systems have been based on a centralized model, in which all health personnel terminals were connected to a central system to be able to read and write data in the electronic medical record that that person had in that system. In addition, people did not have a simple way of being able to carry information from one system to another and in any language, for example, on business or vacation trips. Therefore, health professionals could not have a global vision of the person, which led to worse health care and higher health costs (duplication of diagnostic tests, readmissions, etc.). On the other hand, the healthcare professional attending the patient could not sent an electronic report automatically and securely to the patient.
 
-In 2021 people become the center of the health ecosystem, thanks to FHIR and IPS standards, UUID v4 identifiers, the Universal Health Identifier and the digital identity of the UNID Foundation. Through UHC and the Universal Health Identifier, the person can unify their data on the mobile phone, go to a regular health service or a new one, show their Universal Health Identifier and establish an encrypted connection with the professional who attends to them to share health data in international standards.
+In 2021 people become the center of the health ecosystem, thanks to FHIR and IPS standards, UUID v4 identifiers, the Universal Health Identifier and the digital identity in the UNID network. Through UHC and the Universal Health Identifier, the person can unify their data on the mobile phone, go to a regular health service or a new one, show their Universal Health Identifier and establish an encrypted connection with the professional who attends to them to share health data in international standards.
 
 Likewise, using the Universal Health Identifier, the digital identity of the UNID Foundation, the UUID v4 identifiers and communication [DIDComm] (https://github.com/decentralized-identity/didcomm-messaging), the healthcare professional application can:
 1. Read the information in the medical record that the person sends in FHIR / IPS format.

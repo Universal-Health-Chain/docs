@@ -2,11 +2,11 @@
 # **Universal Health Chain - versión 2.0** </br> *Cadena Universal de Salud*
 
 
-Copyright © 2022 FUNDACION UNID.
+Copyright © FUNDACION UNID.
 
-Copyright © 2022 CONECTATE SOLUCIONES Y APLICACIONES SL.
+Copyright © CONECTATE SOLUCIONES Y APLICACIONES SL.
 
-Copyright © 2022 CONNECTING SOLUTION & APPLICATIONS LTD.
+Copyright © CONNECTING SOLUTION & APPLICATIONS LTD.
 
 Reservados todos los derechos.
 

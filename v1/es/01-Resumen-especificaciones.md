@@ -1,8 +1,8 @@
 ![](https://avatars.githubusercontent.com/u/57396025?s=200&v=4)
 # **Universal Health Chain - v1**
-Copyright © 2022 FUNDACION UNID.
+Copyright © FUNDACION UNID.
 
-Copyright © 2022 CONECTATE SOLUCIONES Y APLICACIONES SL.
+Copyright © CONECTATE SOLUCIONES Y APLICACIONES SL.
 
 Reservados todos los derechos. 
 <p>&nbsp  </p>
@@ -61,7 +61,7 @@ UHC es un sistema sistema resiliente ante virus y ataques informáticos (por eje
 <p>&nbsp  </p>
 
 UHC se basa en la criptografía asimétrica de Curva Elíptica Diffie-Hellman (ECDH) en la que cada participante dispone de claves públicas y privadas para firma y encriptación de datos.
-Mediante el Identificador Universal de Salud y la identidad digital de la Fundación UNID, cada usuario (paciente, profesional, organización) o dispositivo (servidor, dispositivo médico, etc.) tiene una identidad digital con unas claves privadas y públicas para firmar y encriptar información.
+Mediante el Identificador Universal de Salud y la identidad digital en la red de UNID, cada usuario (paciente, profesional, organización) o dispositivo (servidor, dispositivo médico, etc.) tiene una identidad digital con unas claves privadas y públicas para firmar y encriptar información.
 <p>&nbsp  </p>
 
 ## **Blockchain de la Fundación UNID**
@@ -335,7 +335,7 @@ Aplicando esto mismo a la identificación de personas, pacientes, profesionales,
 
 Así, utilizando UUID v4 como base para la codificación de las identidades, compatible con FHIR, IPS y también con credenciales verificables (VC) y documentos DID, cada una de las partes que participan en la cadena de salud dispone de un Identificador Universal de Salud y de una identidad digital universal.
 
-A modo de ejemplo, el Identificador Universal de la Fundación UNID se puede representar de las siguientes formas:
+A modo de ejemplo, el Identificador Universal se puede representar de las siguientes formas:
 
 | Tipo                  | Descripción |
 | ---                   | --- |
