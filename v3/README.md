@@ -11,6 +11,10 @@ Copyright © CONNECTING SOLUTION & APPLICATIONS LTD.
 
 ## **English**
 
-### **[Documentation](./en/)**
-1. [Introduction](./en/01-Introduction.md)
+### **[e-Health Documentation](./ehealth/en)**
+1. [Introduction](./ehealth/en/01-Introduction.md)
+<p>&nbsp  </p>
+
+### **[Veterinary Documentation](./ehealth/en)**
+1. [Introduction](./veterinary/en/01-Introduction.md)
 <p>&nbsp  </p>

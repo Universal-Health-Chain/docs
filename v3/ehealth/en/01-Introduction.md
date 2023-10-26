@@ -1,5 +1,5 @@
 ![](https://avatars.githubusercontent.com/u/57396025?s=200&v=4)
-# **Universal Health Chain (UHC) - version 3.0**
+# **Universal Health Chain (UHC) for Human Health - version 3.0**
 Copyright © FUNDACION UNID.
 
 Copyright © CONECTATE SOLUCIONES Y APLICACIONES SL.
