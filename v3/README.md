@@ -11,10 +11,11 @@ Copyright © CONNECTING SOLUTION & APPLICATIONS LTD.
 
 ## **English**
 
-### **[e-Health Documentation](./ehealth/en)**
+### **[Human Health Documentation](./ehealth/en)**
 1. [Introduction](./ehealth/en/01-Introduction.md)
+2. [Universal and Decentralized Identity](./ehealth/en/02-Universal-decentralized-identity.md)
 <p>&nbsp  </p>
 
-### **[Veterinary Documentation](./ehealth/en)**
+### **[Animal Health Documentation](./veterinary/en)**
 1. [Introduction](./veterinary/en/01-Introduction.md)
-<p>&nbsp  </p>
+2. [Universal and Decentralized Identity](./veterinary/en/02-Universal-decentralized-identity.md)

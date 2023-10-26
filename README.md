@@ -13,8 +13,15 @@ Copyright © CONNECTING SOLUTION & APPLICATIONS LTD.
 
 ## **English**
 
-### **[Documentation](./v3/en/)**
-1. [Introduction](./v3/en/01-Introduction.md)
+### **[Human Health Documentation](./v3/ehealth/en)**
+1. [Introduction](./v3/ehealth/en/01-Introduction.md)
+2. [Universal and Decentralized Identity](./v3/ehealth/en/02-Universal-decentralized-identity.md)
+<p>&nbsp  </p>
+
+### **[Animal Health Documentation](./v3/veterinary/en)**
+1. [Introduction](./v3/veterinary/en/01-Introduction.md)
+2. [Universal and Decentralized Identity](./v3/veterinary/en/02-Universal-decentralized-identity.md)
+
 <p>&nbsp  </p>
 
 
